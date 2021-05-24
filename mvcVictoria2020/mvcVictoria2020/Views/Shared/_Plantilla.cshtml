@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/_web/css/bootstrap.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h2>@ViewBag.TitlePag</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2 btn-group btn-dark">
+                        @Html.ActionLink("Lista de Reservas", "Index", "Reserva")
+                    </div>
+                    <div class="col-md-2 btn-group btn-dark">
+                        @Html.ActionLink("Nueva Reserva", "Crear", "Reserva")
+                    </div>
+                    <div class="col-md-2 btn-group btn-dark">
+                        @Html.ActionLink("Lista de Pagos", "Index", "Pago")
+                    </div><div class="col-md-2 btn-group btn-dark">
+                        @Html.ActionLink("Nuevo Pago", "Crear", "Pago")
+                    </div>
+                    <div class="col-md-2 btn-group btn-dark">
+                        @Html.ActionLink("Lista de Clientes", "Index", "Cliente")
+                    </div>
+                    <div class="col-md-2 btn-group btn-dark">
+                        @Html.ActionLink("Lista de Habitaciones", "Index", "Habitacion")
+                    </div>
+
+                </div>
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</body>
+</html>

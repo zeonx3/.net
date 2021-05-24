@@ -1,0 +1,30 @@
+﻿@model List<Models.HabitacionModel>
+@{
+    ViewBag.Title = "Index";
+    ViewBag.TitlePag = "Lista de Habitaciones";
+    Layout = "~/Views/Shared/_Plantilla.cshtml";
+}
+
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Num Habitacion</th>
+            <th>Detalle</th>
+            <th>Valor dia</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.numhab</td>
+                <td>@item.detalle</td>
+                <td>@item.valordia</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

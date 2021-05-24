@@ -1,0 +1,52 @@
+﻿@model Models.ReservaModel
+@{
+    ViewBag.Title = "Borrar";
+    ViewBag.TitlePag = "Borrar Reserva";
+    Layout = "~/Views/Shared/_Plantilla.cshtml";
+}
+
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+<div class="form-group">
+    <label>Nombre Cliente:</label>
+    @Html.TextBoxFor(model => model.NombreCliente, new { @class = "form-control", @readonly = true, @type = "text" })
+
+
+</div>
+
+<div class="form-group">
+    <label>Numero Habitacion</label>
+    @Html.TextBoxFor(model => model.NumValordia, new { @class = "form-control", @readonly = true, @type = "text" })
+
+</div>
+    <div class="form-group">
+
+        <label>Fecha Checkin:</label>
+        @Html.TextBoxFor(model => model.FechainiTxt, new { @class = "form-control", @readonly = true, @type = "text" })
+    </div>
+    <div class="form-group">
+        <label>Numero de dias:</label>
+        @Html.TextBoxFor(model => model.numdias, new { @class = "form-control", @readonly = true, @type = "number" })
+    </div>
+    <div class="form-group">
+        <label>Fecha Cehckout:</label>
+        @Html.TextBoxFor(model => model.FechaoutTxt, new { @class = "form-control", @readonly = true, @type = "text" })
+    </div>
+    <div class="form-group">
+        <label>Total:</label>
+        @Html.TextBoxFor(model => model.Totaltxt, new { @class = "form-control", @readonly = true, @type = "text" })
+    </div>
+    <div class="form-group">
+        <label>Estado:</label>
+        @Html.TextBoxFor(model => model.EstadoTxt, new { @class = "form-control", @readonly = true, @type = "text" })
+
+    </div>
+    <div class="form-group">
+
+        <input class="btn btn-danger" type="submit" value="Confirmar" />
+
+    </div>
+
+
+}

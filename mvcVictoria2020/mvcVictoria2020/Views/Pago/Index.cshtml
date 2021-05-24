@@ -1,0 +1,40 @@
+﻿@model List<Models.PagoModel>
+@{
+    ViewBag.Title = "Index";
+    ViewBag.TitlePag = "Lista de pagos";
+    Layout = "~/Views/Shared/_Plantilla.cshtml";
+}
+
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>Habitacion</th>
+            <th>Fecha Checkin</th>
+            <th>Fecha Checkout</th>
+            <th>Monto pago</th>
+            <th>Estado</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.NombreCliente</td>
+                <td>@item.NumValordia</td>
+                <td>@item.FechainiTxt</td>
+                <td>@item.FechaoutTxt</td>
+                <td>@item.Totaltxt</td>
+                <td>@item.EstadoTxt</td>
+                <td>@Html.ActionLink("Editar", "Editar", new { id = item.idpago })</td>
+                <td>@Html.ActionLink("Borrar", "Borrar", new { id = item.idpago })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

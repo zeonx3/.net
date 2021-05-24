@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_plantilla.cshtml";
+    ViewBag.Title = "Index";
+    ViewBag.TitlePag = "Lista de pacientes";
+}
+
+
+<p>
+    <a href="nuevo.cshtml">Nuevo</a>
+</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id.Paciente</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Telefono</th>
+                    <th>Genero</th>
+                    <th>Edad</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var pa in Model)
+                {
+                    <tr>
+                        <td>@pa.idpaciente</td>
+                        <td>@pa.nombres</td>
+                        <td>@pa.apellidos</td>
+                        <td>@pa.email</td>
+                        <td>@pa.telefono</td>
+                        <td>@pa.genero</td>
+                        <td>@pa.edad</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        

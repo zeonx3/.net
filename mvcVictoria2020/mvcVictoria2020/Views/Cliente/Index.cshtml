@@ -1,0 +1,29 @@
+﻿@model List<Models.ClienteModel>
+@{
+    ViewBag.Title = "Index";
+    ViewBag.TitlePag = "Lista de Clientes";
+    Layout = "~/Views/Shared/_Plantilla.cshtml";
+}
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Nombre cliente</th>
+            <th>Email</th>
+            <th>Telefono</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.NombreCliente</td>
+                <td>@item.email</td>
+                <td>@item.telefono</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

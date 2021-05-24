@@ -1,0 +1,318 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BCE9A2D3-BC32-4EC6-A125-BBA2E3730CFB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CentroMedicoV1</RootNamespace>
+    <AssemblyName>CentroMedicoV1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\base.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="EspecialidadBorrar.aspx" />
+    <Content Include="EspecialidadEditar.aspx" />
+    <Content Include="EspecialidadListar.aspx" />
+    <Content Include="EspecialidadNuevo.aspx" />
+    <Content Include="EstadoBorrar.aspx" />
+    <Content Include="EstadoEditar.aspx" />
+    <Content Include="EstadoListar.aspx" />
+    <Content Include="EstadoNuevo.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="horaborrar.aspx" />
+    <Content Include="horaeditar.aspx" />
+    <Content Include="horalistar.aspx" />
+    <Content Include="horanuevo.aspx" />
+    <Content Include="img\add.png" />
+    <Content Include="img\borrar.png" />
+    <Content Include="img\editar.png" />
+    <Content Include="img\nuevo.png" />
+    <Content Include="index.aspx" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\jquery-3.3.1.js" />
+    <Content Include="logout.aspx" />
+    <Content Include="medicolistar.aspx" />
+    <Content Include="MedicoNuevo.aspx" />
+    <Content Include="Menu.aspx" />
+    <Content Include="NuevoReserva.aspx" />
+    <Content Include="ReservaEditar.aspx" />
+    <Content Include="ReservaListar.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="ReservaBorrar.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buss\BussEspecialidad.cs" />
+    <Compile Include="Buss\BussEstado.cs" />
+    <Compile Include="Buss\BussHora.cs" />
+    <Compile Include="Buss\BussMedico.cs" />
+    <Compile Include="Buss\BussPaciente.cs" />
+    <Compile Include="Buss\BussReserva.cs" />
+    <Compile Include="Buss\BussUsuario.cs" />
+    <Compile Include="Data\BaseDatos.cs" />
+    <Compile Include="EspecialidadBorrar.aspx.cs">
+      <DependentUpon>EspecialidadBorrar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EspecialidadBorrar.aspx.designer.cs">
+      <DependentUpon>EspecialidadBorrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EspecialidadEditar.aspx.cs">
+      <DependentUpon>EspecialidadEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EspecialidadEditar.aspx.designer.cs">
+      <DependentUpon>EspecialidadEditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EspecialidadListar.aspx.cs">
+      <DependentUpon>EspecialidadListar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EspecialidadListar.aspx.designer.cs">
+      <DependentUpon>EspecialidadListar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EspecialidadNuevo.aspx.cs">
+      <DependentUpon>EspecialidadNuevo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EspecialidadNuevo.aspx.designer.cs">
+      <DependentUpon>EspecialidadNuevo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoBorrar.aspx.cs">
+      <DependentUpon>EstadoBorrar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EstadoBorrar.aspx.designer.cs">
+      <DependentUpon>EstadoBorrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoEditar.aspx.cs">
+      <DependentUpon>EstadoEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EstadoEditar.aspx.designer.cs">
+      <DependentUpon>EstadoEditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoListar.aspx.cs">
+      <DependentUpon>EstadoListar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EstadoListar.aspx.designer.cs">
+      <DependentUpon>EstadoListar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoNuevo.aspx.cs">
+      <DependentUpon>EstadoNuevo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EstadoNuevo.aspx.designer.cs">
+      <DependentUpon>EstadoNuevo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="horaborrar.aspx.cs">
+      <DependentUpon>horaborrar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="horaborrar.aspx.designer.cs">
+      <DependentUpon>horaborrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="horaeditar.aspx.cs">
+      <DependentUpon>horaeditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="horaeditar.aspx.designer.cs">
+      <DependentUpon>horaeditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="horalistar.aspx.cs">
+      <DependentUpon>horalistar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="horalistar.aspx.designer.cs">
+      <DependentUpon>horalistar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="horanuevo.aspx.cs">
+      <DependentUpon>horanuevo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="horanuevo.aspx.designer.cs">
+      <DependentUpon>horanuevo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="medicolistar.aspx.cs">
+      <DependentUpon>medicolistar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="medicolistar.aspx.designer.cs">
+      <DependentUpon>medicolistar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MedicoNuevo.aspx.cs">
+      <DependentUpon>MedicoNuevo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MedicoNuevo.aspx.designer.cs">
+      <DependentUpon>MedicoNuevo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Especialidad.cs" />
+    <Compile Include="Modelos\Estado.cs" />
+    <Compile Include="Modelos\Hora.cs" />
+    <Compile Include="Modelos\Medico.cs" />
+    <Compile Include="Modelos\Paciente.cs" />
+    <Compile Include="Modelos\Reserva.cs" />
+    <Compile Include="Modelos\UsuarioModel.cs" />
+    <Compile Include="NuevoReserva.aspx.cs">
+      <DependentUpon>NuevoReserva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NuevoReserva.aspx.designer.cs">
+      <DependentUpon>NuevoReserva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservaEditar.aspx.cs">
+      <DependentUpon>ReservaEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReservaEditar.aspx.designer.cs">
+      <DependentUpon>ReservaEditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReservaListar.aspx.cs">
+      <DependentUpon>ReservaListar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReservaListar.aspx.designer.cs">
+      <DependentUpon>ReservaListar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReservaBorrar.aspx.cs">
+      <DependentUpon>ReservaBorrar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReservaBorrar.aspx.designer.cs">
+      <DependentUpon>ReservaBorrar.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58314</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58314/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

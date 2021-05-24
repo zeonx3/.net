@@ -1,0 +1,65 @@
+﻿@model List<Models.HorasDisponiblesModel>
+@{
+    ViewBag.Title = "Reservas";
+    ViewBag.TitlePag = "Horas disponibles";
+
+    Layout = "~/Views/Shared/_Plantilla.cshtml";
+
+    var cc = 0;
+}
+
+<form method="post">
+    <div class="row">
+        <div class="col-md-3">Fecha:</div>
+        <div class="col-md-3">Medico:</div>
+        <div class="col-md-3">Especialidad:</div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <input class="form-control" type="date" name="fecha" />
+        </div>
+        <div class="col-md-3">
+            <select class="form-control" name="idmedico"></select>
+        </div>
+        <div class="col-md-3">
+            <select class="form-control" name="idespecialidad"></select>
+        </div>
+        <div class="col-md-2">
+            <input class="btn btn-warning" type="submit" value="Buscar" />
+        </div>
+    </div>
+</form>
+<hr />
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Médico</th>
+            <th>ESpecialidad</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            cc++;
+            <tr>
+                <td>@cc</td>
+                <td>@item.FechaTxt</td>
+                <td>@item.HoraminutoTxt</td>
+                <td>@item.ApeNomMedico</td>
+                <td>@item.nom_especialidad</td>
+                <td>
+                    @Html.ActionLink("Seleccionar", "TomarHora", new { id = item.idhora })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+

@@ -1,0 +1,37 @@
+﻿@model List<DataSoporte2020.Data.estado>
+@{
+    ViewBag.Title = "Index";
+    ViewBag.TitlePag = "Index Estado";
+    Layout = "~/Views/Shared/_Plantilla.cshtml";
+}
+<p>
+    @Html.ActionLink("Nuevo Estado","Crear")
+</p>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Id.Estado</th>
+            <th>Desc_Estado</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+        <tr>
+            <td>@item.idestado</td>
+            <td>@item.desc_estado</td>
+
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { id = item.idestado })
+            </td>
+
+            <td>
+                @Html.ActionLink("Borrar", "Borrar", new { id = item.idestado })
+            </td>
+
+        </tr>
+        }
+    </tbody>
+</table>

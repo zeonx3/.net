@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/_web/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <h2>@ViewBag.TitlePag</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                  
+                </div>
+                <hr />
+                <!--
+                    En RenderBody se visualiza el contenido de
+                    todas las vistas que utilicen esta plantilla
+                -->
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿@model List<Models.ReservaModel>
+@{
+    ViewBag.Title = "Index";
+    ViewBag.TitlePag = "Lista de Reservas";
+    Layout = "~/Views/Shared/_Plantilla.cshtml";
+}
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Fecha Checkin</th>
+            <th>Num. Dias</th>
+            <th>Fecha Checkout</th>
+            <th>Costo Total</th>
+            <th>Habitacion</th>
+            <th>Ciente</th>
+            <th>Estado</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.FechainiTxt</td>
+            <td>@item.numdias</td>
+            <td>@item.FechaoutTxt</td>
+            <td>@item.Totaltxt</td>
+            <td>@item.NumValordia</td>
+            <td>@item.NombreCliente</td>
+            <td>@item.EstadoTxt</td>
+            <td>@Html.ActionLink("Editar", "Editar", new { id = item.idreserva })</td>
+            <td>@Html.ActionLink("Borrar", "Borrar", new { id = item.idreserva })</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
